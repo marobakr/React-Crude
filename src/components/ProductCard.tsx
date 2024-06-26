@@ -6,7 +6,7 @@ interface IProps {
   product: IProduct;
 }
 const ProductCard = ({ product }: IProps) => {
-  const { category, colors, description, imageURL, price, title, id } = product;
+  const { category, description, imageURL, price, title } = product;
   return (
     <div className='max-w-sm md:max-w-lg mx-auto md:mx-0 border rounded-md p-2 flex flex-col '>
       <Image imagePath={imageURL} alt='title' className='rounded-md mb-2' />

@@ -1,8 +1,9 @@
-import { IProduct } from '../interface';
+import { IFormList, IProduct } from '../interface';
+import { v4 as uuidv4 } from 'uuid';
 
 export const productList: IProduct[] = [
   {
-    id: 's',
+    id: uuidv4(),
     title: 'Product 1',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -17,7 +18,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 2',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -32,7 +34,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 3',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -47,7 +50,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 4',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -62,7 +66,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 5',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -77,7 +82,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 6',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -92,7 +98,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 7',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -107,7 +114,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 8',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -122,7 +130,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 4',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -137,7 +146,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 5',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -152,7 +162,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 1',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -167,7 +178,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 2',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -182,7 +194,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 3',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -197,7 +210,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 4',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
@@ -212,7 +226,8 @@ export const productList: IProduct[] = [
     },
   },
   {
-    id: 's',
+    id: uuidv4(),
+
     title: 'Product 5',
     description:
       '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat consectetur iusto et ipsum doloremque ipsam blanditiis quia numquam, rem nam officia iure. Eos voluptatibus modi labore, in sapiente dolorem ea animi magnam et dolorum repellat, nisi ipsum sed saepe.',
