@@ -1,12 +1,32 @@
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { ReactNode } from 'react';
 
+/**
+ * Interface representing the properties for the Modal component.
+ */
 interface IProps {
+  /** Determines if the modal is open or closed. */
   isOpen: boolean;
+
+  /** Function to close the modal. */
   closeModal: () => void;
+
+  /** Optional title for the modal dialog. */
   title?: string;
+
+  /** Content to be rendered inside the modal dialog. */
   children: ReactNode;
 }
+
+/**
+ * A functional component that renders a modal dialog.
+ *
+ * @param isOpen - Determines if the modal is open or closed.
+ * @param closeModal - Function to close the modal.
+ * @param title - Optional title for the modal dialog.
+ * @param children - Content to be rendered inside the modal dialog.
+ * @returns A JSX element representing the modal dialog.
+ */
 
 const Modal = ({ title, closeModal, isOpen, children }: IProps) => {
   return (
