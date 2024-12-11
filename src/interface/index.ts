@@ -13,7 +13,14 @@ export interface IProduct {
 
 export interface IFormList {
   id: string;
-  name: string;
+  name: 'title' | 'description' | 'price' | 'imageURL';
   label: string;
   type: string;
+}
+
+export interface IProdcutValidations {
+  description: string;
+  price: string;
+  imageURL: string;
+  title: string;
 }

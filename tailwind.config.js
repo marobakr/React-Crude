@@ -13,7 +13,11 @@ export default {
       },
     },
 
-    extend: {},
+    extend: {
+      colors: {
+        mycolor: 'rgba(0,0,0,0.54)',
+      },
+    },
   },
   plugins: [],
 };
