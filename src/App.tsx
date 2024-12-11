@@ -1,6 +1,9 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import Circel from './components/circel';
+import Errors from './components/errors';
 import ProductCard from './components/ProductCard';
-import { formInputList, productList } from './data';
+import { colorList, formInputList, productList } from './data';
 import { IProdcutValidations, IProduct } from './interface';
 import Button from './ui/button';
 import Input from './ui/Input';
@@ -26,11 +29,23 @@ function App() {
 
   const [product, setProduct] = useState<IProduct>(defaultProductObject);
 
+  const [products, setProducts] = useState<IProduct[]>(productList);
+
+  const [tempColor, setTempColor] = useState<string[]>([]);
+
+  const [errorsMsg, setErrosMsg] = useState({
+    description: '',
+    imageURL: '',
+    price: '',
+    title: '',
+  });
+
   /* 
     =============================
     ========== HANDLER ========== 
     =============================
   */
+  console.log(tempColor);
   const openModal = () => {
     setIsOpen(true);
   };
@@ -42,20 +57,43 @@ function App() {
   const onChangeHandle = (event: ChangeEvent<HTMLInputElement>): void => {
     const { value, name } = event.target;
     setProduct({ ...product, [name]: value });
+    setErrosMsg({ ...errorsMsg, [name]: '' });
     event.preventDefault();
   };
 
   const submitHandler = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
 
+    /* Prodcut List Validations */
     const productValidations: IProdcutValidations = {
       title: product.title,
-      description: product.title,
-      imageURL: product.title,
-      price: product.title,
+      description: product.description,
+      imageURL: product.imageURL,
+      price: product.price,
     };
+
+    /* Validation */
     const errors = productValidation(productValidations);
-    console.log(errors);
+    setErrosMsg(errors);
+
+    /* Check If Any Property has a value of "" && check if all properties have a value of ""  */
+    const hasError =
+      Object.values(errors).some((value) => value === '') &&
+      Object.values(errors).every((value) => value === '');
+    if (!hasError) {
+      return;
+    }
+
+    /* Add New Product to the List */
+    setProducts((prev) => [
+      { ...product, id: uuidv4(), colors: tempColor },
+      ...prev,
+    ]);
+
+    /* Clear Input Fields OF All Settings */
+    setProduct(defaultProductObject);
+    setTempColor([]);
+    closeModal();
   };
 
   const onCancel = (): void => {
@@ -68,7 +106,7 @@ function App() {
       ========== RENDER =========== 
       =============================
   */
-  const renderProductsList = productList.map((product) => (
+  const renderProductsList = products.map((product) => (
     <ProductCard key={product.id} product={product} />
   ));
 
@@ -88,7 +126,22 @@ function App() {
         type={input.type}
         id={input.id}
       />
+      <Errors msgeError={errorsMsg[input.name]} />
     </div>
+  ));
+
+  const renderProductsColor = colorList.map((color) => (
+    <Circel
+      key={color}
+      color={color}
+      onClick={() => {
+        if (tempColor.includes(color)) {
+          setTempColor((prev) => prev.filter((item) => item !== color));
+          return;
+        }
+        setTempColor((prevTem) => [...prevTem, color]);
+      }}
+    />
   ));
 
   return (
@@ -116,6 +169,21 @@ function App() {
       <Modal isOpen={isOpen} closeModal={closeModal} title='ADD A NEW TITLE'>
         <form className='space-y-3' onSubmit={submitHandler}>
           {renderFormInput}
+          <div className='flex items-center space-x-2'>
+            {renderProductsColor}
+          </div>
+          <div className='flex items-center flex-wrap  '>
+            {tempColor.map((color) => (
+              <span
+                style={{ backgroundColor: color }}
+                className='rounded-[5px] p-1 text-white text-sm m-1'
+                key={color}
+              >
+                {color}
+              </span>
+            ))}
+          </div>
+
           <div className='flex space-x-2 items-center'>
             <Button className='bg-indigo-700 hover:bg-indigo-800'>
               Submit

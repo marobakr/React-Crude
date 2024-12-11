@@ -1,5 +1,5 @@
-import { IFormList, IProduct } from '../interface';
 import { v4 as uuidv4 } from 'uuid';
+import { IFormList, IProduct } from '../interface';
 
 export const productList: IProduct[] = [
   {
@@ -26,7 +26,7 @@ export const productList: IProduct[] = [
     imageURL:
       'https://images.unsplash.com/photo-1621155346337-1d19476ba7d6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGltYWdlfGVufDB8fDB8fHww',
     price: '$109.99',
-    colors: ['Red', 'Blue'],
+    colors: ['Red', 'Blue', 'orange'],
     category: {
       name: 'Category 2',
       imageURL:
@@ -42,7 +42,7 @@ export const productList: IProduct[] = [
     imageURL:
       'https://images.unsplash.com/photo-1621155346337-1d19476ba7d6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGltYWdlfGVufDB8fDB8fHww',
     price: '$189.99',
-    colors: ['Red', 'Blue'],
+    colors: ['Red', 'Blue', 'yellow'],
     category: {
       name: 'Category 3',
       imageURL:
@@ -58,7 +58,7 @@ export const productList: IProduct[] = [
     imageURL:
       'https://images.unsplash.com/photo-1621155346337-1d19476ba7d6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGltYWdlfGVufDB8fDB8fHww',
     price: '$129.99',
-    colors: ['Red', 'Blue'],
+    colors: ['Red', 'Blue', 'black', 'yellow'],
     category: {
       name: 'Category 4',
       imageURL:
@@ -257,4 +257,21 @@ export const formInputList: IFormList[] = [
     type: 'text',
   },
   { id: 'price', name: 'price', label: 'Ptoduct Price', type: 'text' },
+];
+
+export const colorList: string[] = [
+  '#FF5733',
+  '#33FF57',
+  '#3357FF',
+  '#F1C40F',
+  '#8E44AD',
+  '#16A085',
+  '#2ECC71',
+  '#E74C3C',
+  '#E74C8C',
+  '#E74C2C',
+  '#E7145C',
+  '#E4560C',
+  '#3498DB',
+  '#34495E',
 ];
