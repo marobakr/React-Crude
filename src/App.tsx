@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
+import Errors from './components/errors';
 import ProductCard from './components/ProductCard';
 import { formInputList, productList } from './data';
 import { IProdcutValidations, IProduct } from './interface';
@@ -26,6 +27,13 @@ function App() {
 
   const [product, setProduct] = useState<IProduct>(defaultProductObject);
 
+  const [errorsMsg, setErrosMsg] = useState({
+    description: '',
+    imageURL: '',
+    price: '',
+    title: '',
+  });
+
   /* 
     =============================
     ========== HANDLER ========== 
@@ -42,6 +50,7 @@ function App() {
   const onChangeHandle = (event: ChangeEvent<HTMLInputElement>): void => {
     const { value, name } = event.target;
     setProduct({ ...product, [name]: value });
+    setErrosMsg({ ...errorsMsg, [name]: '' });
     event.preventDefault();
   };
 
@@ -50,12 +59,21 @@ function App() {
 
     const productValidations: IProdcutValidations = {
       title: product.title,
-      description: product.title,
-      imageURL: product.title,
-      price: product.title,
+      description: product.description,
+      imageURL: product.imageURL,
+      price: product.price,
     };
+
     const errors = productValidation(productValidations);
-    console.log(errors);
+    setErrosMsg(errors);
+
+    /* Check If Any Property has a value of "" && check if all properties have a value of ""  */
+    const hasError =
+      Object.values(errors).some((value) => value === '') &&
+      Object.values(errors).every((value) => value === '');
+    if (!hasError) {
+      return;
+    }
   };
 
   const onCancel = (): void => {
@@ -88,6 +106,7 @@ function App() {
         type={input.type}
         id={input.id}
       />
+      <Errors msgeError={errorsMsg[input.name]} />
     </div>
   ));
 
