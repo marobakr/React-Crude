@@ -1,9 +1,6 @@
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { ReactNode } from 'react';
 
-/**
- * Interface representing the properties for the Modal component.
- */
 interface IProps {
   /** Determines if the modal is open or closed. */
   isOpen: boolean;
@@ -18,16 +15,6 @@ interface IProps {
   children: ReactNode;
 }
 
-/**
- * A functional component that renders a modal dialog.
- *
- * @param isOpen - Determines if the modal is open or closed.
- * @param closeModal - Function to close the modal.
- * @param title - Optional title for the modal dialog.
- * @param children - Content to be rendered inside the modal dialog.
- * @returns A JSX element representing the modal dialog.
- */
-
 const Modal = ({ title, closeModal, isOpen, children }: IProps) => {
   return (
     <>
@@ -38,11 +25,15 @@ const Modal = ({ title, closeModal, isOpen, children }: IProps) => {
         onClose={closeModal}
         __demoMode
       >
-        <div className='fixed inset-0 z-10 w-screen overflow-y-auto'>
-          <div className='flex min-h-full items-center justify-center p-4'>
+        <div className='fixed inset-0 z-10 w-screen overflow-y-auto bg-mycolor'>
+          <div
+            className='flex min-h-full items-center justify-center p-4
+          
+          '
+          >
             <DialogPanel
               transition
-              className='w-full max-w-md rounded-xl bg-gray-500 p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
+              className='w-full max-w-md rounded-xl bg-gray-200 p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
             >
               {/**
                *  if title is true ? return <DialogTitle/>
@@ -50,13 +41,13 @@ const Modal = ({ title, closeModal, isOpen, children }: IProps) => {
               {title && (
                 <DialogTitle
                   as='h3'
-                  className='text-base/7 font-medium text-white'
+                  className='text-base/7 font-medium text-gray-700'
                 >
                   {title}
                 </DialogTitle>
               )}
 
-              <p className='mt-2 text-sm/6 text-white/50'>
+              <p className='mt-2 text-sm/6 text-gray-700'>
                 Your payment has been successfully submitted. We’ve sent you an
                 email with all of the details of your order.
               </p>

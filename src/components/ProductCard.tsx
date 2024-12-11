@@ -12,24 +12,22 @@ interface IProps {
 }
 /**
  * A functional component that renders a card displaying product card.
- *
- * @param product - The product object containing details to be displayed in the card.
- * @returns A JSX element representing the product card.
  */
 
 const ProductCard = ({ product }: IProps) => {
-  /****** DISTRUCTING ******/
+  /*********************** DISTRUCTING ***********************/
+
   const { category, description, imageURL, price, title } = product;
 
   return (
     <div className='max-w-sm md:max-w-lg mx-auto md:mx-0 border rounded-md p-2 flex flex-col '>
       {/* -------- Child Component -------- */}
-      <Image imagePath={imageURL} alt='title' className='rounded-md mb-2' />
+      <Image imagePath={imageURL} alt='title' tailwindClass='rounded-md mb-2' />
 
       <h3>{title}</h3>
 
       <p>{sliceText(description)}</p>
-
+      {/* -------- Colors Component -------- */}
       <div className='flex space-x-2 items-center my-4 cursor-pointer '>
         <span className='w-5 h-5 bg-indigo-600 rounded-full cursor-pointer' />
         <span className='w-5 h-5 bg-blue-600 rounded-full cursor-pointer' />
@@ -40,17 +38,19 @@ const ProductCard = ({ product }: IProps) => {
       <div className='flex items-center justify-between my-3'>
         <span>{price}</span>
 
-        {/* -------- Child Component -------- */}
+        {/* -------- Child Component Image -------- */}
         <Image
+          /* Props */
           imagePath={category.imageURL}
           alt={category.name}
-          className='w-10 h-10 rounded-full object-cover'
+          tailwindClass='w-10 h-10 rounded-full object-cover'
         />
       </div>
 
       <div className='flex justify-between items-center space-x-2 my-2'>
-        {/* -------- Child Component -------- */}
+        {/* -------- Button Component -------- */}
         <Button
+          /* Props */
           className='bg-indigo-600'
           onClick={() => {
             console.log('edit');
